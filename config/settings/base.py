@@ -63,7 +63,6 @@ DJANGO_APPS = [
     'django.contrib.admin',
 ]
 THIRD_PARTY_APPS = [
-    'crispy_forms',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -72,6 +71,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     'dunqgram.users.apps.UsersAppConfig',
     # Your stuff: custom apps go here
+    'dunqgram.images.apps.ImagesConfig',
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
