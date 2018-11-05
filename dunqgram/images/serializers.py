@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from . import models
 
-class ImageSerializer(serializers.Serializers):
+class ImageSerializer(serializers.Serializer):
 
     class Meta:
         model = models.Image
