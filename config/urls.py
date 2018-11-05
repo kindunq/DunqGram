@@ -19,6 +19,10 @@ urlpatterns = [
         "users/",
         include("dunqgram.users.urls", namespace="users"),
     ),
+    path(
+        "images/",
+        include("dunqgram.images.urls", namespace="images"),
+    ),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
 ] + static(
