@@ -39,7 +39,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 DATABASES = {
-    'default': env.db('DATABASE_URL', default='postgres:///dunqgram'),
+    'default': env.db('DATABASE_URL', default='postgres://postgres:dlscjs1!23@localhost:5432/dunqgram'),
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
