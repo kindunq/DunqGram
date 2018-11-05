@@ -66,7 +66,7 @@ THIRD_PARTY_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'rest_framework',
+    'rest_framework',    #REST framework
 ]
 LOCAL_APPS = [
     'dunqgram.users.apps.UsersAppConfig',
