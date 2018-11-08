@@ -21,7 +21,7 @@ urlpatterns = [
     ),
     path(
         "images/",
-        include("dunqgram.images.urls", namespace="images"),
+        include("dunqgram.images.urls", namespace="Feed"),
     ),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
