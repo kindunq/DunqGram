@@ -6,7 +6,6 @@ from . import models, serializers
 class Feed(APIView):
 
     def get(self, request, format=None):
-        
         user = request.user
 
         following_users = user.following.all()
@@ -24,7 +23,7 @@ class Feed(APIView):
         sorted_list = sorted(image_list, key=lambda image:image.created_at, reverse=True)
 
         
-        serializer = serializers.ImageSerializer(sorted_list, many =True)
+        serializer = serializers.ImageSerializer(sorted_list, many=True)
 
         return Response(serializer.data)
 
