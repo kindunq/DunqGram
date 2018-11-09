@@ -4,7 +4,8 @@ from . import views
 app_name = "Feed"
 urlpatterns = [
     path("", view=views.Feed.as_view(), name="feed"),
-    path("<int:id>/like", view=views.LikeImage.as_view(), name="like_image")
+    path("<int:id>/like", view=views.LikeImage.as_view(), name="like_image"),
+    path("<int:id>/comment", view=views.CommentOnImage.as_view(), name="comment_image")
 ]
 
 
