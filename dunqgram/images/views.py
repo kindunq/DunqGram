@@ -21,16 +21,15 @@ class Feed(APIView):
 
                 image_list.append(image)
 
-        sorted_list = sorted(image_list, key=lambda image:image.created_at, reverse=True)
+        sorted_list = sorted(image_list, key=lambda image: image.created_at, reverse=True)
 
-        
         serializer = serializers.ImageSerializer(sorted_list, many=True)
 
         return Response(serializer.data)
 
 
 class LikeImage(APIView):
-    
+
     def get(self, request, id, format=None):
 
         user = request.user
@@ -42,8 +41,8 @@ class LikeImage(APIView):
 
         try:
             preexisiting_like = models.Like.objects.get(
-                creator = user,
-                image = found_image
+                creator=user,
+                image=found_image
             )
 
             preexisiting_like.delete()
@@ -52,34 +51,45 @@ class LikeImage(APIView):
 
         except models.Like.DoesNotExist:
             new_like = models.Like.objects.create(
-                creator = user,
-                image = found_image
+                creator=user,
+                image=found_image
             )
 
         new_like.save()
 
         return Response(status=status.HTTP_201_CREATED)
 
+
 class CommentOnImage(APIView):
 
     def post(self, request, id, format=None):
-        
+
         user = request.user
         try:
-
             found_image = models.Image.objects.get(id=id)
         except models.Image.DoesNotExist:
 
             return Response(status=status.HTTP_404_NOT_FOUND)
-        
 
         serializer = serializers.CommentSerializer(data=request.data)
 
         if serializer.is_valid():
 
-           serializer.save(creator=user,image=found_image)
+            serializer.save(creator=user, image=found_image)
 
-           return Response(data=serializer.data, status=status.HTTP_201_CREATED)
+            return Response(data=serializer.data, status=status.HTTP_201_CREATED)
 
         else:
             return Response(data=serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class Comment(APIView):
+
+    def delete(self, request, id, formant=None):
+        user = request.user
+        try:
+            found_comment = models.Comment.objects.get(id=id, creator=user)
+            found_comment.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        except models.Comment.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
