@@ -66,7 +66,8 @@ THIRD_PARTY_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'rest_framework',    #REST framework
+    'rest_framework',  # REST framework
+    'taggit',  # tags for the photos
 ]
 LOCAL_APPS = [
     'dunqgram.users.apps.UsersAppConfig',
@@ -238,3 +239,4 @@ SOCIALACCOUNT_ADAPTER = 'dunqgram.users.adapters.SocialAccountAdapter'
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+TAGGIT_CASE_INSENSITIVE = True
