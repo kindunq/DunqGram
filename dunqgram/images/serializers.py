@@ -1,9 +1,10 @@
 from rest_framework import serializers
 from . import models
 from dunqgram.users import models as user_models
+from taggit_serializer.serializers import (TagListSerializerField, TaggitSerializer)
 
 
-class UserProfileImageSerializer(serializers.ModelSerializer):
+class CountImageSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Image
@@ -47,7 +48,8 @@ class LikeSerializer(serializers.ModelSerializer):
 class ImageSerializer(serializers.ModelSerializer):
     comments = CommentSerializer(many=True)
     creator = FeedUserSerializer()
+    tags = TagListSerializerField()
 
     class Meta:
         model = models.Image
-        fields = ("id", "file", "location", "caption", "comments", "like_count", "creator")
+        fields = ("id", "file", "location", "caption", "comments", "like_count", "creator", "tags")
