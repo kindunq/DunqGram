@@ -4,7 +4,7 @@ from dunqgram.images import serializers as images_serialzers
 
 
 class UserProfileSerializer(serializers.ModelSerializer):
-    images = images_serialzers.UserProfileImageSerializer(many=True)
+    images = images_serialzers.CountImageSerializer(many=True)
 
     class Meta:
         model = models.User
