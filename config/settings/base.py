@@ -68,6 +68,7 @@ THIRD_PARTY_APPS = [
     'allauth.socialaccount',
     'rest_framework',  # REST framework
     'taggit',  # tags for the photos
+    'taggit_serializer',
 ]
 LOCAL_APPS = [
     'dunqgram.users.apps.UsersAppConfig',
