@@ -3,7 +3,7 @@ from . import models
 # Register your models here.
 
 
-@admin.register(models.Notifications)
+@admin.register(models.Notification)
 class NotificationsAdmin(admin.ModelAdmin):
 
     list_display = (

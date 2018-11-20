@@ -6,7 +6,7 @@ from dunqgram.images import models as image_models
 # Create your models here.
 
 
-class Notifications(image_models.TimeStampedModel):
+class Notification(image_models.TimeStampedModel):
     TYPE_CHOICES = (
         ('like', 'Like'),
         ('comment', 'Comment'),
