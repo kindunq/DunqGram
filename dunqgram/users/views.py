@@ -14,6 +14,7 @@ class ExploreUsers(APIView):
 
 
 class FollowUser(APIView):
+    # follow notification
     def post(self, request, id, format=None):
 
         user = request.user

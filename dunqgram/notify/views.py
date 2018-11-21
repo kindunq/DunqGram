@@ -4,14 +4,13 @@ from rest_framework import status
 from . import models, serializers
 
 
-class Notifications(APIView):
+class Notifys(APIView):
 
     def get(self, request, format=None):
-        
         user = request.user
-        
-        notifications = models.Notification.objects.filter(to=user)
 
-        serializer = serializers.NotificationSerializer(notifications, many=True)
+        notifys = models.Notify.objects.filter(to=user)
+
+        serializer = serializers.NotifySerializers(notifys, many=True)
 
         return Response(data=serializer.data, status=status.HTTP_200_OK)

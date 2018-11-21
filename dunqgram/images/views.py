@@ -30,6 +30,8 @@ class Feed(APIView):
 
 class LikeImage(APIView):
 
+    # create notification for like
+
     def post(self, request, id, format=None):
 
         user = request.user
@@ -79,6 +81,8 @@ class UnLikeImage(APIView):
 
 
 class CommentOnImage(APIView):
+
+    # comment notification
 
     def post(self, request, id, format=None):
 
