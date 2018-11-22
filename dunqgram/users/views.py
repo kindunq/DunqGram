@@ -2,6 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from . import models, serializers
+from dunqgram.notify import views as notify_views
 
 
 class ExploreUsers(APIView):
@@ -14,7 +15,9 @@ class ExploreUsers(APIView):
 
 
 class FollowUser(APIView):
+
     # follow notification
+
     def post(self, request, id, format=None):
 
         user = request.user
@@ -28,6 +31,8 @@ class FollowUser(APIView):
         user.following.add(user_to_follow)
 
         user.save()
+
+        notify_views.create_notify(user, user_to_follow, 'follow' )
 
         return Response(status=status.HTTP_200_OK)
 
