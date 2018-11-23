@@ -2,7 +2,9 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from . import models, serializers
+from dunqgram.users import models as user_models
 from dunqgram.notify import views as notify_views
+from dunqgram.users import serializers as user_serializers
 
 class Feed(APIView):
 
@@ -35,6 +37,24 @@ class Feed(APIView):
 
 
 class LikeImage(APIView):
+
+    def get(self, request, id, format=None):
+        
+        # 1. id crawling in like models
+
+        likes = models.Like.objects.filter(image__id=id)
+
+        # 2. create array of creator
+
+        like_creators_ids = likes.values('creator_id')
+
+        # 3. creatorid find in user model
+
+        users = user_models.User.objects.filter(id__in=like_creators_ids)
+
+        serializer = user_serializers.ListUserSerializer(users, many=True)
+
+        return Response(data=serializer.data, status=status.HTTP_200_OK)
 
     # create notification for like
 
