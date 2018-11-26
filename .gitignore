@@ -282,3 +282,5 @@ pip-selfcheck.json
 dunqgram/media/
 
 .pytest_cache/
+dunqgram/*/migrations/
+
