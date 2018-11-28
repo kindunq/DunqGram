@@ -1,9 +1,9 @@
 from django.urls import path
 from . import views
 
-app_name = "Feed"
+app_name = "Images"
 urlpatterns = [
-    path("", view=views.Feed.as_view(), name="feed"),
+    path("", view=views.Images.as_view(), name="Images"),
     path("<int:id>/", view=views.ImageDetail.as_view(), name="image_detail"),
     path("<int:id>/likes/", view=views.LikeImage.as_view(), name="like_image"),
     path("<int:id>/unlikes/", view=views.UnLikeImage.as_view(), name="unlike_image"),
