@@ -13,7 +13,7 @@ class SmallImageSerializer(serializers.ModelSerializer):
 
 
 class CountImageSerializer(serializers.ModelSerializer):
-
+    tags = TagListSerializerField()
     class Meta:
         model = models.Image
         fields = (
@@ -21,6 +21,7 @@ class CountImageSerializer(serializers.ModelSerializer):
             'file',
             'comment_count',
             'like_count',
+            'tags',
         )
 
 
