@@ -4,7 +4,7 @@ from dunqgram.images import serializers as images_serialzers
 
 
 class UserProfileSerializer(serializers.ModelSerializer):
-    images = images_serialzers.CountImageSerializer(many=True)
+    images = images_serialzers.CountImageSerializer(many=True, read_only=True)
     # readonly no modify
     post_count = serializers.ReadOnlyField() 
     followers_count = serializers.ReadOnlyField() 
