@@ -8,7 +8,8 @@ from rest_framework_jwt.views import obtain_jwt_token
 
 urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
-    path("api-token-auth/", obtain_jwt_token),
+    path("rest-auth/", include('rest_auth.urls')),
+    path("rest-auth/registration/", include('rest_auth.registration.urls')),
     #install postman
     
     path(settings.ADMIN_URL, admin.site.urls),
