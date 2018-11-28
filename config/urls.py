@@ -9,6 +9,8 @@ from rest_framework_jwt.views import obtain_jwt_token
 urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
     path("api-token-auth/", obtain_jwt_token),
+    #install postman
+    
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
     path(
