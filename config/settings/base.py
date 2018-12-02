@@ -66,12 +66,13 @@ THIRD_PARTY_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
     'rest_framework',  # REST framework
     'rest_framework.authtoken',
     'taggit',  # tags for the photos
-    'taggit_serializer', #tag serializer
-    'rest_auth', # rest auth
-    'rest_auth.registration', #enable resistration
+    'taggit_serializer',  # tag serializer
+    'rest_auth',  # rest auth
+    'rest_auth.registration',  # enable resistration
 
 ]
 LOCAL_APPS = [
