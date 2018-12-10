@@ -272,7 +272,7 @@ tags
 [Ii]nclude
 [Ll]ib
 [Ll]ib64
-[Ss]cripts
+#[Ss]cripts
 pyvenv.cfg
 pip-selfcheck.json
 
