@@ -18,6 +18,7 @@ const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin-alt');
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 
+
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
 const publicPath = '/';
@@ -313,7 +314,8 @@ module.exports = {
 							{
 								loader: require.resolve('sass-loader'),
 								options: {
-									data: `@import "${paths.appSrc}/config/_variables.scss";`
+									//data: `@import "${paths.appSrc}/config/_variables.scss";`,
+									data: `@import "${paths.appSrc.replace(/\\/g, '/')}/config/_variables.scss";`,
 								}
 							}
 						)
