@@ -35,6 +35,7 @@ django-taggit = "*"
 django-taggit-serializer = "*"
 djangorestframework-jwt = "*"
 django-rest-auth = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 pylint = "*"
