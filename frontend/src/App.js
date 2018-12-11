@@ -6,13 +6,13 @@ class App extends Component {
 	render() {
 		return (
 			<div className={style.App}>
-				<header className={style.Appheader}>
-					<img src={logo} className={style.Applogo} alt="logo" />
+				<header className={style.App__header}>
+					<img src={logo} className={style.App__logo} alt="logo" />
 					<p>
 						Edit <code>src/App.js</code> and save to reload.
 					</p>
 					<a
-						className="App-link"
+						className={style.App__link}
 						href="https://reactjs.org"
 						target="_blank"
 						rel="noopener noreferrer"

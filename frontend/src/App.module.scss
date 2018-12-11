@@ -2,12 +2,12 @@
   text-align: center;
 }
 
-.Applogo {
+.App__logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
 }
 
-.Appheader {
+.App__header {
   background-color: $bg;
   min-height: 100vh;
   display: flex;
@@ -18,7 +18,7 @@
   color: white;
 }
 
-.App-link {
+.App__link {
   color: #61dafb;
 }
 
